@@ -20,4 +20,6 @@ jobs:
           org: 'example-org'
           registry: 'npm.pkg.github.com'
           token: 'example-token'
+      - name: Check if the result is correct
+        run: cmp --silent .npmrc .npmrc.example || echo "Result is incorrect."
 
