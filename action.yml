@@ -1,5 +1,8 @@
 name: 'Dot-npmrc Generator'
 description: 'Generate a dot-npmrc file with given data.'
+branding:
+  icon: anchor
+  color: red
 inputs:
   root:
     description: 'The root of the JS project'
