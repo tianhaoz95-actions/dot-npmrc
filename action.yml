@@ -20,4 +20,4 @@ inputs:
     default: 'true'
 runs:
   using: 'node12'
-  main: 'lib/index.js'
+  main: 'compiled/index.js'
