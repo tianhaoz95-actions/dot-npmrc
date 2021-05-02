@@ -21,8 +21,9 @@ jobs:
           registry: 'npm.pkg.github.com'
           token: 'example-token'
       - name: Check if the result is correct
-        run: |
-          cat .npmrc
-          cat .npmrc.example
-          cmp --silent .npmrc .npmrc.example || echo "Result is incorrect."
+        uses: tianhaoz95-actions/file-diff@main
+        with:
+          lhs: '.npmrc'
+          rhs: '.npmrc.example'
+          compare: 'true'
 
