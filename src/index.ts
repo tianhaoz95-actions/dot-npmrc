@@ -28,12 +28,12 @@ const main = (): void => {
     }
     if (includeRegistry) {
         core.info('Both org and registry are found. Will add the registry line.');
-        const registryLine: string = `@${org}:registry=https://${registry}`;
+        const registryLine: string = `@${org}:registry=https://${registry}\n`;
         addLine(fullPath, registryLine);
     }
     if (includeAuth) {
         core.info('Both registry and token are found. Will add auth line.');
-        const authLine: string = `//${registry}/:_authToken=${token}`;
+        const authLine: string = `//${registry}/:_authToken=${token}\n`;
         addLine(fullPath, authLine);
     }
     core.info('Done!');
