@@ -1,0 +1,23 @@
+name: 'Dot-npmrc Generator'
+description: 'Generate a dot-npmrc file with given data.'
+inputs:
+  root:
+    description: 'The root of the JS project'
+    required: true
+    default: '.'
+  org:
+    description: 'The orgnization ID'
+    required: false
+  registry:
+    description: 'The npm registry URL'
+    required: false
+  token:
+    description: 'The token for authentication'
+    required: false
+  overwrite:
+    description: 'If the action should overwrite .npmrc or append'
+    required: false
+    default: 'true'
+runs:
+  using: 'node12'
+  main: 'lib/index.js'

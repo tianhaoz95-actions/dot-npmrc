@@ -1,0 +1,3 @@
+  
+@example-org:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=example-token

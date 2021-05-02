@@ -1,0 +1,33 @@
+{
+  "name": "dot-npmrc-action",
+  "version": "1.0.0",
+  "description": "GitHub action to generate dot npmrc for using GitHub npm registry.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianhaoz95-actions/dot-npmrc.git"
+  },
+  "author": "Tianhao Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianhaoz95-actions/dot-npmrc/issues"
+  },
+  "homepage": "https://github.com/tianhaoz95-actions/dot-npmrc#readme",
+  "dependencies": {
+    "@actions/artifact": "^0.5.1",
+    "@actions/cache": "^1.0.7",
+    "@actions/core": "^1.2.7",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0",
+    "@actions/glob": "^0.1.1",
+    "@actions/io": "^1.1.0",
+    "@actions/tool-cache": "^1.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
