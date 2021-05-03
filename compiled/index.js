@@ -32,6 +32,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var core = __importStar(__nccwpck_require__(186));
 var path_1 = __importDefault(__nccwpck_require__(622));
 var fs_1 = __importDefault(__nccwpck_require__(747));
+var defaultRegistry = 'npm.pkg.github.com';
 var clearFile = function (filename) {
     fs_1.default.writeFileSync(filename, '', { flag: 'w+' });
 };
@@ -41,15 +42,16 @@ var addLine = function (filename, content) {
 var main = function () {
     var root = core.getInput('root');
     var org = core.getInput('org');
-    var registry = core.getInput('registry');
+    var registryInput = core.getInput('registry');
+    var registry = registryInput === '' ? defaultRegistry : registryInput;
     var token = core.getInput('token');
     // TODO(tianhaoz95): change this to getBooleanInput once
     // it becomes available.
     var overwrite = core.getInput('overwrite') === 'true';
     var filename = '.npmrc';
     var fullPath = path_1.default.join(root, filename);
-    var includeRegistry = (org !== '' && registry !== '');
-    var includeAuth = (token !== '' && registry !== '');
+    var includeRegistry = (org !== '');
+    var includeAuth = (token !== '');
     if (overwrite) {
         core.info('Will overwrite .npmrc instead of appending.');
         clearFile(fullPath);
