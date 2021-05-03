@@ -1,17 +1,18 @@
 {
   "name": "dot-npmrc-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub action to generate dot npmrc for using GitHub npm registry.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "compile": "ncc build lib/index.js --out compiled --license licenses.txt",
     "dist": "npm run build && npm run compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo NOT_IMPLEMENTED",
+    "semantic-release": "npm run dist && semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tianhaoz95-actions/dot-npmrc.git"
+    "url": "https://github.com/tianhaoz95-actions/dot-npmrc.git"
   },
   "author": "Tianhao Zhou",
   "license": "MIT",
@@ -30,7 +31,9 @@
     "@actions/tool-cache": "^1.6.1"
   },
   "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
     "@vercel/ncc": "^0.28.4",
+    "semantic-release": "^17.4.2",
     "typescript": "^4.2.4"
   }
 }
