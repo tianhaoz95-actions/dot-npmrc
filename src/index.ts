@@ -2,6 +2,8 @@ import * as core from '@actions/core';
 import path from 'path';
 import fs from 'fs';
 
+const defaultRegistry: string = 'npm.pkg.github.com';
+
 const clearFile = (filename: string): void => {
     fs.writeFileSync(filename, '', { flag: 'w+' });
 }
@@ -13,15 +15,16 @@ const addLine = (filename: string, content: string): void => {
 const main = (): void => {
     const root = core.getInput('root');
     const org = core.getInput('org');
-    const registry = core.getInput('registry');
+    const registryInput = core.getInput('registry');
+    const registry = registryInput === '' ? defaultRegistry : registryInput;
     const token = core.getInput('token');
     // TODO(tianhaoz95): change this to getBooleanInput once
     // it becomes available.
     const overwrite = core.getInput('overwrite') === 'true';
     const filename = '.npmrc';
     const fullPath = path.join(root, filename);
-    const includeRegistry: boolean = (org !== '' && registry !== '');
-    const includeAuth: boolean = (token !== '' && registry !== '');
+    const includeRegistry: boolean = (org !== '');
+    const includeAuth: boolean = (token !== '');
     if (overwrite) {
         core.info('Will overwrite .npmrc instead of appending.');
         clearFile(fullPath);
