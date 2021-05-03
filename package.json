@@ -8,7 +8,7 @@
     "compile": "ncc build lib/index.js --out compiled --license licenses.txt",
     "dist": "npm run build && npm run compile",
     "test": "echo NOT_IMPLEMENTED",
-    "semantic-release": "npm run dist && semantic-release"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
