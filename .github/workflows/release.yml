@@ -15,3 +15,5 @@ jobs:
           node-version: 14
       - run: npm ci && npm run dist
       - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
