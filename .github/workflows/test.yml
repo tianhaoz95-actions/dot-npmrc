@@ -21,7 +21,7 @@ jobs:
           registry: 'npm.pkg.github.com'
           token: 'example-token'
       - name: Check if the result is correct
-        uses: tianhaoz95-actions/file-diff@v1.0.0
+        uses: tianhaoz95-actions/file-diff@v1.1.0
         with:
           lhs: '.npmrc'
           rhs: '.npmrc.example'
