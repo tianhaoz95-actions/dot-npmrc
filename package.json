@@ -1,6 +1,6 @@
 {
   "name": "dot-npmrc-action",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "GitHub action to generate dot npmrc for using GitHub npm registry.",
   "main": "index.js",
   "scripts": {

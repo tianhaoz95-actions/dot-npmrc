@@ -39,28 +39,12 @@ var clearFile = function (filename) {
 var addLine = function (filename, content) {
     fs_1.default.appendFileSync(filename, content);
 };
-var selectToken = function (actionToken, dependabotToken) {
-    if (actionToken !== '') {
-        core.info("The GitHub action token is found.\n            Preferred over Dependabot token.");
-        return actionToken;
-    }
-    if (dependabotToken !== '') {
-        core.info("The GitHub action token not found.\n            Will use Dependabot token.");
-        return dependabotToken;
-    }
-    core.info("None of GitHub action token and Dependabot\n        token were found. Will continue with empty\n        token.");
-    return '';
-};
 var main = function () {
     var root = core.getInput('root');
     var org = core.getInput('org');
     var registryInput = core.getInput('registry');
     var registry = registryInput === '' ? defaultRegistry : registryInput;
-    var actionToken = core.getInput('token');
-    var dependabotToken = core.getInput('dependanot-token');
-    core.startGroup('Token selection');
-    var token = selectToken(actionToken, dependabotToken);
-    core.endGroup();
+    var token = core.getInput('token');
     // TODO(tianhaoz95): change this to getBooleanInput once
     // it becomes available.
     var overwrite = core.getInput('overwrite') === 'true';

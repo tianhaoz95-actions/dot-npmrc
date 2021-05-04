@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/tianhaoz95-actions/dot-npmrc/compare/v1.2.0...v1.2.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* deprecate dependabot token support ([#10](https://github.com/tianhaoz95-actions/dot-npmrc/issues/10)) ([2f26529](https://github.com/tianhaoz95-actions/dot-npmrc/commit/2f265298ee3816d7f0a74204a381401e3e659168))
+
 # [1.2.0](https://github.com/tianhaoz95-actions/dot-npmrc/compare/v1.1.2...v1.2.0) (2021-05-04)
 
 
