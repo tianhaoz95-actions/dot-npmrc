@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/tianhaoz95-actions/dot-npmrc/compare/v1.1.2...v1.2.0) (2021-05-04)
+
+
+### Features
+
+* add optional dependabot spcific token ([#9](https://github.com/tianhaoz95-actions/dot-npmrc/issues/9)) ([5a704d8](https://github.com/tianhaoz95-actions/dot-npmrc/commit/5a704d8aeba104a6c760b9d2ffdd33cddad1ae55))
+
 ## [1.1.2](https://github.com/tianhaoz95-actions/dot-npmrc/compare/v1.1.1...v1.1.2) (2021-05-03)
 
 
