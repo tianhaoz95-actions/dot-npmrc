@@ -17,6 +17,9 @@ inputs:
   token:
     description: 'The token for authentication'
     required: false
+  dependanot-token:
+    description: 'The dependabot token for authentication'
+    required: false
   overwrite:
     description: 'If the action should overwrite .npmrc or append'
     required: false

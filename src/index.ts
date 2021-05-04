@@ -12,12 +12,36 @@ const addLine = (filename: string, content: string): void => {
     fs.appendFileSync(filename, content);
 }
 
+const selectToken = (actionToken: string, dependabotToken: string): string => {
+    if (actionToken !== '') {
+        core.info(
+            `The GitHub action token is found.
+            Preferred over Dependabot token.`);
+        return actionToken;
+    }
+    if (dependabotToken !== '') {
+        core.info(
+            `The GitHub action token not found.
+            Will use Dependabot token.`);
+        return dependabotToken;
+    }
+    core.info(
+        `None of GitHub action token and Dependabot
+        token were found. Will continue with empty
+        token.`);
+    return '';
+}
+
 const main = (): void => {
     const root = core.getInput('root');
     const org = core.getInput('org');
     const registryInput = core.getInput('registry');
     const registry = registryInput === '' ? defaultRegistry : registryInput;
-    const token = core.getInput('token');
+    const actionToken = core.getInput('token');
+    const dependabotToken = core.getInput('dependanot-token');
+    core.startGroup('Token selection');
+    const token = selectToken(actionToken, dependabotToken);
+    core.endGroup();
     // TODO(tianhaoz95): change this to getBooleanInput once
     // it becomes available.
     const overwrite = core.getInput('overwrite') === 'true';
